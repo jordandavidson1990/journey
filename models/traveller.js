@@ -3,14 +3,16 @@ const Traveller = function(journeys) {
 };
 
 Traveller.prototype.getJourneyStartLocations = function() {
-  return this.journeys.map((start) => start.startLocation)};
+  return this.journeys.map((start) => start.startLocation)
+};
 
 
 Traveller.prototype.getJourneyEndLocations = function() {
- return this.journeys.map((end) => end.endLocation)};
+  return this.journeys.map((end) => end.endLocation)
+};
 
 Traveller.prototype.getModesOfTransport = function() {
-return this.journeys.map((x) => x.transport)
+  return this.journeys.map((x) => x.transport)
 };
 
 Traveller.prototype.getJourneysByTransport = function(transport) {
@@ -19,12 +21,22 @@ Traveller.prototype.getJourneysByTransport = function(transport) {
   // });
   // return result
   // }
-  return this.journeys.filter((journey)=> journey.transport === transport)};
+  return this.journeys.filter((journey) => journey.transport === transport)
+};
 
 
 Traveller.prototype.getJourneysByMinDistance = function(minDistance) {
-
+  const result = this.journeys.filter((journey) =>{
+    return journey.distance > minDistance;
+  });
+  return result
 };
+  // Cinema.prototype.particularLength = function(length){
+  //   const result = this.films.filter((film) =>{
+  //     return film.length > length;
+  //   });
+  //   return result
+  // };
 
 Traveller.prototype.calculateTotalDistanceTravelled = function() {
 
