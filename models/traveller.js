@@ -26,20 +26,22 @@ Traveller.prototype.getJourneysByTransport = function(transport) {
 
 
 Traveller.prototype.getJourneysByMinDistance = function(minDistance) {
-//   const result = this.journeys.filter((journey) =>{
-//     return journey.distance > minDistance;
-//   });
-//   return result
-// };
-return this.journeys.filter((journey) => journey.distance > minDistance)};
+  //   const result = this.journeys.filter((journey) =>{
+  //     return journey.distance > minDistance;
+  //   });
+  //   return result
+  // };
+  return this.journeys.filter((journey) => journey.distance > minDistance)};
 
-Traveller.prototype.calculateTotalDistanceTravelled = function() {
+  Traveller.prototype.calculateTotalDistanceTravelled = function() {
+    //   return this.journeys.reduce((runningTotal, journey) =>{
+    //     return runningTotal + journey.distance;
+    //   }, 0);
+    // };
+    return this.journeys.reduce((runningTotal, journey) =>  runningTotal + journey.distance, 0)}
 
-};
+    Traveller.prototype.getUniqueModesOfTransport = function() {
+      return this.journeys.onlyUnique((journey) => journey.transport)
+    };
 
-Traveller.prototype.getUniqueModesOfTransport = function() {
-
-};
-
-
-module.exports = Traveller;
+    module.exports = Traveller;
