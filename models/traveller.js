@@ -26,17 +26,12 @@ Traveller.prototype.getJourneysByTransport = function(transport) {
 
 
 Traveller.prototype.getJourneysByMinDistance = function(minDistance) {
-  const result = this.journeys.filter((journey) =>{
-    return journey.distance > minDistance;
-  });
-  return result
-};
-  // Cinema.prototype.particularLength = function(length){
-  //   const result = this.films.filter((film) =>{
-  //     return film.length > length;
-  //   });
-  //   return result
-  // };
+//   const result = this.journeys.filter((journey) =>{
+//     return journey.distance > minDistance;
+//   });
+//   return result
+// };
+return this.journeys.filter((journey) => journey.distance > minDistance)};
 
 Traveller.prototype.calculateTotalDistanceTravelled = function() {
 
